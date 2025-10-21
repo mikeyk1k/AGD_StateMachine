@@ -23,6 +23,9 @@ namespace StatePattern.Enemy
         {
             timer = 0;
         }
-        private void ResetTimer() => timer = Owner.Data.IdleTime;
+        private void ResetTimer()
+        {
+            timer = Owner.Data.IdleTime;
+        }
     }
 }
