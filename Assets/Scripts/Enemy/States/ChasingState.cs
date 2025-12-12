@@ -1,8 +1,11 @@
 ﻿using StatePattern.Main;
 using StatePattern.Player;
 using StatePattern.StateMachine;
+using System;
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace StatePattern.Enemy
 {
@@ -18,11 +21,16 @@ namespace StatePattern.Enemy
         {
             SetTarget();
             SetStoppingDistance();
+            Owner.Agent.SetDestination(target.Position);
         }
 
         public void Update()
         {
             MoveTowardsTarget();
+
+            //if (Owner.Agent.pathPending)
+            //    return;
+
             if (ReachedTarget())
             {
                 ResetPath();
@@ -31,7 +39,6 @@ namespace StatePattern.Enemy
         }
 
         public void OnStateExit() => target = null;
-
 
         private void SetTarget() => target = GameService.Instance.PlayerService.GetPlayer();
 

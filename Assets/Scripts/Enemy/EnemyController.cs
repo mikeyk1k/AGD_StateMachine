@@ -1,6 +1,7 @@
 ﻿using StatePattern.Enemy.Bullet;
 using StatePattern.Main;
 using StatePattern.Player;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -64,7 +65,7 @@ namespace StatePattern.Enemy
         public void ToggleEnemyColor(bool value)=>  enemyView.ToggleColor(value);
         
 
-        public void Shoot()
+        public virtual void Shoot()
         {
             enemyView.PlayShootingEffect();
             GameService.Instance.SoundService.PlaySoundEffects(Sound.SoundType.ENEMY_SHOOT);
