@@ -15,7 +15,7 @@ namespace StatePattern.Enemy
             CreateStateMachine();
             stateMachine.ChangeState(States.PATROLLING);
         }
-        private void SetCloneCount(int count) => CloneCountLeft = count;
+        public void SetCloneCount(int count) => CloneCountLeft = count;
         private void CreateStateMachine() => stateMachine = new RobotStateMachine(this);
         public override void UpdateEnemy()
         {

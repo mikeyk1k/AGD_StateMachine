@@ -42,18 +42,6 @@ namespace StatePattern.Enemy
 
         public void PlayShootingEffect() => muzzleFlash.Play();
 
-        public void ToggleColor(bool value)
-        {
-            if (value)
-            {
-                enemyGraphic.color = Color.red;
-            }
-            else
-            {
-                enemyGraphic.color = Color.white;
-            }
-        }
-
         private void Update() => Controller?.UpdateEnemy();
 
         private void OnTriggerEnter(Collider other)
