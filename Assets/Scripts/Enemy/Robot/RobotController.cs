@@ -13,7 +13,7 @@ namespace StatePattern.Enemy
             enemyView.SetController(this);
             ChangeColor(EnemyColorType.Default);
             CreateStateMachine();
-            stateMachine.ChangeState(States.PATROLLING);
+            stateMachine.ChangeState(States.IDLE);
         }
         public void SetCloneCount(int count) => CloneCountLeft = count;
         private void CreateStateMachine() => stateMachine = new RobotStateMachine(this);
