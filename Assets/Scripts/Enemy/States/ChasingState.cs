@@ -21,15 +21,15 @@ namespace StatePattern.Enemy
         {
             SetTarget();
             SetStoppingDistance();
-            Owner.Agent.SetDestination(target.Position);
+            //Owner.Agent.SetDestination(target.Position);
         }
 
         public void Update()
         {
             MoveTowardsTarget();
 
-            //if (Owner.Agent.pathPending)
-            //    return;
+            if (Owner.Agent.pathPending)
+                return;
 
             if (ReachedTarget())
             {
